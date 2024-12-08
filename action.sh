@@ -22,7 +22,7 @@ npm install -y postcss postcss-cli autoprefixer
 
 
 echo '👯 Clone remote repository'
-git clone https://github.com/${REMOTE} ${DEST}
+git clone https://${GITHUB_ACTOR}:${TOKEN}@github.com/${REMOTE} ${DEST}
 
 echo '🧹 Clean site'
 if [ -d "${DEST}" ]; then
