@@ -19,19 +19,7 @@ npm init -y
 rm -rf node_modules && npm cache clean -f && npm install
 npm install -y postcss postcss-cli autoprefixer
 
-echo '🤵 Install Hugo'
-mkdir tmp/ && cd tmp/
-echo "Downloading Hugo"
 
-curl -sSL $(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep "browser_download_url.*\hugo_extended.*\_Linux-64bit.tar.gz" | rev | cut -d ' ' -f 1 | rev | tr -d '"') | tar -xvzf-
-echo "Downloaded Hugo"
-echo "Moving Hugo"
-mkdir /usr/local/bin/
-mv hugo /usr/local/bin/
-echo "Moved Hugo"
-cd .. && rm -rf tmp/
-cd ${GITHUB_WORKSPACE}
-hugo version || exit 1
 
 echo '👯 Clone remote repository'
 git clone https://github.com/${REMOTE} ${DEST}
