@@ -15,7 +15,9 @@ else
 fi
 
 echo '🔧 Install tools'
-npm init -y && npm install -y postcss postcss-cli autoprefixer
+npm init -y
+rm -rf node_modules && npm cache clean -f && npm install
+npm install -y postcss postcss-cli autoprefixer
 
 echo '🤵 Install Hugo'
 mkdir tmp/ && cd tmp/
